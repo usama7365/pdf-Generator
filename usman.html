@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html to PDF File</title>
+</head>
+<style>
+    #heading{
+        color: red;
+        background-color:green;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div>
+        <h1 id="heading">this is heading</h1>
+        <!-- <button id="head" >download pdf</button> -->
+
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script>
+    
+var doc=new jsPDF()
+
+var h1=document.querySelector('#heading')
+
+doc.fromHTML(h1,15,15)
+doc.save("output.pdf")
+
+</script>
+</html>
